@@ -7,8 +7,8 @@ public class MatrixOpClass {
 	private int N;	// size of data
 	private double[] testPointsArray;
 	private double[] dataValues;
-	private double alpha = 5e-3;
-	private double beta = 10.0;
+	private double alpha = 0.1;
+	private double beta =500;
 	private Matrix S;
 	private Matrix I;
 	

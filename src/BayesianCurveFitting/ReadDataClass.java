@@ -6,11 +6,11 @@ import java.io.IOException;
 
 public class ReadDataClass {
 	private double[] dataValues;
-	private String[] info = new String[200];
+	private String[] info = new String[254];
 	int count = 0;
 	
 	public ReadDataClass(int totalDataEntries, String symbol) {
-		String fileName = "TestData/myData_" + symbol + ".csv";
+		String fileName = "TestData/" + symbol + ".csv";
 		dataValues = new double[totalDataEntries];
 		String content = "";
 		try {
@@ -18,7 +18,7 @@ public class ReadDataClass {
 			content = reader.readLine();
 			while(content != null) {
 				String[] data = content.split(",");
-				info[count] = data[1];
+                info[count] = data[1];
 				count++;
 				content = reader.readLine();
 			} 

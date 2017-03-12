@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HW5: Volume Calculator for Cone, Cylinder and Sphere</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <div class="mainBody">
+        <div class="inputBox">
+            <h1>Enter values below to calculate volume of Cone, Cylinder or Sphere</h1>
+            <form>
+                <p>Select the units (English or SI)</p>
+                <input type="radio" checked="true" name="radioGrp" value="eng">English<br>
+                <input type="radio" name="radioGrp" value="si">SI<br>
+                <p>Select the shape</p>
+                <select>
+                    <option value="Cone">Cone</option>
+                    <option value="Cylinder">Cylinder</option>
+                    <option value="Sphere">Sphere</option>
+                </select>
+                <p>Enter radius</p>
+                <input type="text" name="radius" value=""><br>
+                <p>Enter height</p>
+                <input type="text" name="height" value=""><br>
+                <button type="button">Reset form</button>
+                <button type="button">Calculate Volume!</button>
+            </form>
+        </div>
+        <div class="resultBox">
+            <p>You have selected <span id="unit"></span> units</p>
+            <p>Shape selected is <span id="shape"></span></p>
+            <table>
+                <tr>
+                    <th>Shape</th>
+                    <th>Radius(<span id="unit1"></span>)</th>
+                    <th>Height(<span id="unit2"></span>)</th>
+                    <th>Volume(<span id="unit3"></span>^3)</th>
+                </tr>
+                <tr>
+                    <td id="shapeVal"></td>
+                    <td id="radiusVal">\</td>
+                    <td id="heightVal">\</td>
+                    <td id="volVal"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</html>

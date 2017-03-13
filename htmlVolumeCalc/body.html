@@ -6,29 +6,29 @@
 </head>
 <body>
     <div class="mainBody">
+        <h1 class="heading">Volume Calculator</h1>
         <div class="inputBox">
-            <h1>Enter values below to calculate volume of Cone, Cylinder or Sphere</h1>
             <form>
-                <p>Select the units (English or SI)</p>
-                <input type="radio" checked="true" name="radioGrp" value="eng">English<br>
+                <p style="margin-bottom: 0px;">Select the units (English or SI)</p>
+                <input type="radio" checked="true" name="radioGrp" value="eng">English
                 <input type="radio" name="radioGrp" value="si">SI<br>
-                <p>Select the shape</p>
+                <p style="margin-bottom: 0px;">Select the shape</p>
                 <select>
                     <option value="Cone">Cone</option>
                     <option value="Cylinder">Cylinder</option>
                     <option value="Sphere">Sphere</option>
                 </select>
-                <p>Enter radius</p>
+                <p style="margin-bottom: 0px;">Enter radius</p>
                 <input id="radiusIPBox" type="text" name="radius" value=""><br>
-                <p>Enter height</p>
+                <p style="margin-bottom: 0px;">Enter height</p>
                 <input id="heightIPBox" type="text" name="height" value=""><br>
-                <button id="reset" type="button">Reset form</button>
-                <button id="result" type="button">Calculate Volume!</button>
+                <button class="btn" id="reset" type="button">Reset form</button>
+                <button class="btn" id="result" type="button">Calculate Volume!</button>
             </form>
         </div>
         <div class="resultBox">
-            <p>You have selected <span id="unit">English</span> units</p>
-            <p>Shape selected is <span id="shape">Cone</span></p>
+            <p>You have selected <span id="unit" style="color: red">English</span> units</p>
+            <p>Shape selected is <span id="shape" style="color: red">Cone</span></p>
             <table>
                 <tr>
                     <th>Shape</th>

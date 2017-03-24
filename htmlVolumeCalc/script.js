@@ -37,13 +37,13 @@ function calculateVol(){
     var vol = 0;
     switch(shape){
         case "Cone":
-            vol = (Math.PI * (rad^2) * height) / 3;
+            vol = (Math.PI * Math.pow(rad, 2) * height) / 3;
             break;
         case "Cylinder":
-            vol = Math.PI * (rad^2) * height;
+            vol = Math.PI * Math.pow(rad, 2) * height;
             break;
         case "Sphere":
-            vol =   (4*Math.PI*(rad^3))/ 3;
+            vol =   (4*Math.PI*Math.pow(rad, 3))/ 3;
             break;
     }
     if(isNaN(vol))

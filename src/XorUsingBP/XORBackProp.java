@@ -3,7 +3,7 @@ package XorUsingBP;
 import java.io.*;
 import java.util.*;
 import java.text.DecimalFormat;
-
+//https://www.youtube.com/watch?v=aVId8KMsdUU
 class XORBackProp {
 
 	static double w_11 = getRandWeight()/100.0;
@@ -54,10 +54,11 @@ class XORBackProp {
 					e = bpAlgo(1, 0, 1, eta);
 					break;
 				case 3:
-					e = bpAlgo(0, 1, 0, eta);
+					e = bpAlgo(1, 1, 0, eta);
 					break;
 			}
-			
+			if(i > 50000)
+				break;
 			count++;
 			i++;
 		}
@@ -79,13 +80,17 @@ class XORBackProp {
 		node2 = 1 / (1 + Math.exp( - ((ip1 * w_12) + (ip2 * w_22))));
 		output = 1 / (1 + Math.exp(-((node1 * w_31) + (node2 * w_32))));
 		
+		//error = (slope of sigmoid)*(expected - output)
 		error = output * (1 - output) * (target - output);
-
+		
+		//weight = weight + learning_rate * error * input
 		w_31 = w_31 + (eta * error * node1);
 		w_32 = w_32 + (eta * error * node2);
-
+		//accumulated errors
+		//error = transfer_derivative(output) * (weight_k * error_j) 
 		e1 = node1 * (1 - node1) * (error * w_31);
 		e2 = node2 * (1 - node2) * (error * w_32);
+		//weight = weight + learning_rate * error * input
 		w_11 = w_11 + (eta * e1 * ip1);
 		w_12 = w_12 + (eta * e2 * ip1);
 		w_21 = w_21 + (eta * e1 * ip2);

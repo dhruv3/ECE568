@@ -53,7 +53,9 @@ public class ClientSide {
 				}
 			} 
 			catch (IOException ex) { 
-				ex.printStackTrace();
+				System.out.println("Connection Refused");
+				System.exit(1);
+				//ex.printStackTrace();
 			} 
 		}
 		//client program dies
